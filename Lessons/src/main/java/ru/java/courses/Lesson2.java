@@ -1,7 +1,6 @@
 package ru.java.courses;
 
 class Lesson2 {
-
     /**
      * Нужно реализовать формулу y = √(13x + 13/x)
      * Подсказка: квадратный корень вычисляется функцией Math.sqrt()
@@ -12,7 +11,7 @@ class Lesson2 {
      * хвост отбрасываем без откругления
      */
     static int formula(int x) {
-        return 0;
+        return x != 0 ? (int) Math.sqrt(13*x + 13/x) : 0;
     }
 
     /**
@@ -29,7 +28,11 @@ class Lesson2 {
      * @return возвращаем инициалы в верхнем регистре разделенные точкой, как в примере выше
      */
     static String initials(String fullName) {
-        return null;
+        String[] arr = fullName.split(" ");
+        String result = "";
+        for (String s : arr) {
+            result += s.toUpperCase().charAt(0) + ".";
+        }
+        return result;
     }
-
 }
