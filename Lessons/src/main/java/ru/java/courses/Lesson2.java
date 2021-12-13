@@ -29,10 +29,6 @@ class Lesson2 {
      */
     static String initials(String fullName) {
         String[] arr = fullName.split(" ");
-        String result = "";
-        for (String s : arr) {
-            result += s.toUpperCase().charAt(0) + ".";
-        }
-        return result;
+        return arr[0].toUpperCase().charAt(0) + "." + arr[1].toUpperCase().charAt(0) + arr[2].toUpperCase().charAt(0);
     }
 }
