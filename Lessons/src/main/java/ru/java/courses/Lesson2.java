@@ -14,10 +14,6 @@ class Lesson2 {
         return x != 0 ? (int) Math.sqrt(13*x + 13/x) : 0;
     }
 
-    static String getChar(String str) {
-        return (str.charAt(0) + ".").toUpperCase();
-    }
-
     /**
      * Нужно привести строку с полным именем к инициалам.
      * Например, "Иванов Петр Александрович" → "И.П.А."
@@ -34,6 +30,6 @@ class Lesson2 {
 
     static String initials(String fullName) {
         String[] arr = fullName.split(" ");
-        return getChar(arr[0]) + getChar(arr[1]) + getChar(arr[2]);
+        return (arr[0].charAt(0) + "." + arr[1].charAt(0) + '.' + arr[2].charAt(0) + '.').toUpperCase();
     }
 }
