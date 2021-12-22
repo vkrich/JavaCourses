@@ -21,18 +21,13 @@ public class Lesson3_Operators {
         if(i>0){
             str += i;
         }
-        if(i<0){
+        else if(i<0){
             str = i + str;
         }
-        if(i==0){
+        else{
             str = "0";
         }
-
-        if(str.length()<=10){
-            return str;
-        }else{
-            return str.substring(0, 10);
-        }
+        return str.length()<=10 ? str : str.substring(0, 10);
     }
 
     /**
@@ -55,7 +50,6 @@ public class Lesson3_Operators {
         }else if(i>0 && i%2==0){
             i-=1000;
         }
-
         return i >= 0;
     }
 
