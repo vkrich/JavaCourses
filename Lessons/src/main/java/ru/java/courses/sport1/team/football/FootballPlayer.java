@@ -1,12 +1,21 @@
-package ru.java.courses.sport.team.football;
+package ru.java.courses.sport1.team.football;
 
 public class FootballPlayer extends Athlete implements ScoringPlayer{
     private String name;
     private int goals;
     private final PlayerRole role;
 
+    public PlayerRole getRole() {
+        return role;
+    }
+
     public FootballPlayer(String name, PlayerRole role) {
-        this.role = role;
+        if(role == null){
+            throw new IllegalArgumentException("Нет возможности создать игрока с ролью null");
+        }else {
+            this.role = role;
+        }
+
         if(nameCheck(name)) {
             this.name = name;
         }

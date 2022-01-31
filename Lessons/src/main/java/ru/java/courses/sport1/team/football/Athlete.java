@@ -1,4 +1,4 @@
-package ru.java.courses.sport.team.football;
+package ru.java.courses.sport1.team.football;
 
 public class Athlete {
     protected boolean active;

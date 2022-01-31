@@ -1,4 +1,4 @@
-package ru.java.courses.sport.team.football;
+package ru.java.courses.sport1.team.football;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +51,7 @@ public class FootballTeam{
         return players;
     }
 
-    public void addPlayers(FootballPlayer pl){
+    public void addPlayer(FootballPlayer pl){
         if(players.size() < MAX_PLAYERS_COUNT) {
             players.add(pl);
         }else{
@@ -94,5 +94,11 @@ public class FootballTeam{
     @Override
     public int hashCode() {
         return Objects.hash(name, coach, players);
+    }
+
+    public void addPlayers(FootballPlayer player1, FootballPlayer  player2, FootballPlayer  player3) {
+        players.add(player1);
+        players.add(player2);
+        players.add(player3);
     }
 }
