@@ -1,9 +1,6 @@
 package ru.java.courses;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Lesson10_CollectionsLists {
 
@@ -19,9 +16,24 @@ public class Lesson10_CollectionsLists {
      * Удалять элементы из итерируемого списка нельзя - выпадет исключение
      */
     public static List<String> task1(List<Integer> source) {
-        // свой код нужно писать тут
-        // следующую строку можно удалять
-        return null;
+        //System.out.println(source[0]);
+        Collections.sort(source);
+        List<Integer> result_int = new ArrayList<>();
+        int tmp = source.get(0);
+        result_int.add(tmp);
+        for(int i: source){
+            if(tmp != i){
+                result_int.add(i);
+            }
+            tmp = i;
+        }
+
+        List<String> result = new ArrayList<>();
+        for(int i: result_int){
+            result.add(Integer.toString(i));
+        }
+
+        return result;
     }
 
     /**
@@ -34,8 +46,29 @@ public class Lesson10_CollectionsLists {
      * Подсказка: на входе может быть любое количество чисел
      */
     public static List<Integer> task2(Integer... array) {
-        // свой код нужно писать тут
-        // следующую строку можно удалять
-        return null;
+        List<Integer> arr = new ArrayList<>(Arrays.asList(array));
+        if(arr.size() == 0) {
+            return null;
+        }
+
+        for(int i=0;i<arr.size();i++){
+            Integer val = arr.get(i);
+            if(val % 2 == 0){
+                arr.set(i, val + 1);
+            }
+        }
+
+        if(arr.size()>=8) {
+            return arr.subList(3, 8);
+        }else if(arr.size()>=4){
+            List<Integer> result = new ArrayList<>();
+            for(int i=3;i<arr.size();i++) {
+                result.add(arr.get(i));
+            }
+            return result;
+        }else{
+            return null;
+        }
+
     }
 }
